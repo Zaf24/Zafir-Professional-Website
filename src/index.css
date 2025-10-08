@@ -39,14 +39,14 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     /* Series accent colors - Netflix inspired */
-    --speaking: 0 100% 50%;
-    --speaking-glow: 0 100% 60%;
-    --sports: 199 89% 48%;
-    --sports-glow: 199 89% 58%;
-    --essays: 271 91% 65%;
-    --essays-glow: 271 91% 75%;
-    --career: 48 96% 53%;
-    --career-glow: 48 96% 63%;
+    --speaking: 0 84% 60%;
+    --speaking-glow: 0 84% 70%;
+    --sports: 210 100% 40%;
+    --sports-glow: 210 100% 50%;
+    --essays: 280 100% 60%;
+    --essays-glow: 280 100% 70%;
+    --career: 45 100% 50%;
+    --career-glow: 45 100% 60%;
 
     /* Gradients */
     --gradient-radial: radial-gradient(circle at center, hsl(240 10% 8%), hsl(240 10% 3.9%));

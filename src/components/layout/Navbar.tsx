@@ -22,9 +22,9 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-speaking via-career to-essays bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent"
             >
-              Zafir
+              ZAFIR
             </motion.div>
           </Link>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                     className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 rounded-lg transition-colors ${
                       isActive
-                        ? "bg-primary text-primary-foreground"
+                        ? "bg-red-600 text-white"
                         : "text-muted-foreground hover:text-foreground hover:bg-accent"
                     }`}
                   >

@@ -30,7 +30,7 @@ const NotFound = () => {
             <Search className="w-20 h-20 text-muted-foreground" />
           </motion.div>
           
-          <h1 className="mb-6 text-6xl sm:text-7xl font-bold bg-gradient-to-r from-speaking via-career to-essays bg-clip-text text-transparent">
+          <h1 className="mb-6 text-6xl sm:text-7xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             404
           </h1>
           

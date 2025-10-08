@@ -51,7 +51,7 @@ const About = () => {
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Meet
-              <span className="block bg-gradient-to-r from-speaking via-career to-essays bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 The Real Zafir
               </span>
             </h1>

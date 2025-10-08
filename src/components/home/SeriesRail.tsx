@@ -6,31 +6,31 @@ const seriesData = [
   {
     id: "speaking",
     title: "Speaking",
-    description: "Talks, podcasts, hosting events, and Tamil storytelling that inspire and engage.",
+    description: "Keynote presentations, conference talks, and thought leadership that drive innovation and inspire audiences.",
     color: "speaking",
     icon: Mic,
     episodeCount: 12,
   },
   {
     id: "sports",
-    title: "Sports",
-    description: "National-level basketball journey, teamwork lessons, and the discipline of athletics.",
+    title: "Athletics",
+    description: "National-level basketball achievements, leadership skills, and the discipline that drives professional excellence.",
     color: "sports",
     icon: Trophy,
     episodeCount: 8,
   },
   {
     id: "essays",
-    title: "Essays",
-    description: "Philosophical reflections on Tamil culture, technology, and thought leadership.",
+    title: "Thought Leadership",
+    description: "Strategic insights on technology, culture, and innovation that shape the future of work.",
     color: "essays",
     icon: BookOpen,
     episodeCount: 15,
   },
   {
     id: "career",
-    title: "Career",
-    description: "Microsoft, tutoring, projects, certifications, and entrepreneurship—all in one place.",
+    title: "Professional",
+    description: "Microsoft AI expertise, entrepreneurial ventures, and transformative projects that deliver results.",
     color: "career",
     icon: Briefcase,
     episodeCount: 24,
@@ -39,7 +39,7 @@ const seriesData = [
 
 const SeriesRail = () => {
   return (
-    <section className="py-12 sm:py-16 lg:py-20">
+    <section id="my-journey" className="py-12 sm:py-16 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,9 +48,9 @@ const SeriesRail = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">My Story</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">My Journey</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
-            Each series represents a major chapter of my journey. Click to explore episodes and dive deeper into my world.
+            Each series represents a major chapter of my professional journey. Click to explore my achievements and dive deeper into my expertise.
           </p>
         </motion.div>
 
