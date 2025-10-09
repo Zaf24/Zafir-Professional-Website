@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ProfessionalCertifications from "./pages/ProfessionalCertifications";
+import KeyProjects from "./pages/KeyProjects";
+import AzureAIEngineerArticle from "./pages/AzureAIEngineerArticle";
+import ThamizhumNaanumPodcast from "./pages/ThamizhumNaanumPodcast";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +24,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/professional-certifications" element={<ProfessionalCertifications />} />
+          <Route path="/key-projects" element={<KeyProjects />} />
+          <Route path="/azure-ai-engineer" element={<AzureAIEngineerArticle />} />
+          <Route path="/thamizhum-naanum-podcast" element={<ThamizhumNaanumPodcast />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scrollbar styles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-show:hover::-webkit-scrollbar {
+  display: block;
+  height: 6px;
+}
+
+.scrollbar-show:hover::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+.scrollbar-show:hover::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 3px;
+}
+
+.scrollbar-show:hover::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
