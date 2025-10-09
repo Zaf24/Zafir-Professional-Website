@@ -16,7 +16,7 @@ const NetflixEpisodeCard = ({
   title, 
   description, 
   thumbnail, 
-  duration = "45 min", 
+  duration, 
   status = "completed",
   badge,
   link 
@@ -76,10 +76,12 @@ const NetflixEpisodeCard = ({
         
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <Clock className="w-3 h-3" />
-              {duration}
-            </div>
+            {duration && (
+              <div className="flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                {duration}
+              </div>
+            )}
             <div className="flex items-center gap-1">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
               {status === "completed" && "Completed"}

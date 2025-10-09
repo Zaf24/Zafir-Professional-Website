@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, Clock, Award, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, Award, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-const AzureAIEngineerArticle = () => {
+const AzureAIFundamentalsArticle = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -37,10 +37,10 @@ const AzureAIEngineerArticle = () => {
             <div className="flex items-start gap-8">
               {/* Thumbnail */}
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center border border-border overflow-hidden">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-xl flex items-center justify-center border border-border overflow-hidden">
                   <img
-                    src="/microsoft-certified-associate.svg"
-                    alt="Microsoft Azure AI Engineer"
+                    src="/microsoft-certified-fundamentals.svg"
+                    alt="Microsoft Azure AI Fundamentals"
                     className="w-full h-full object-contain p-4"
                   />
                 </div>
@@ -56,27 +56,26 @@ const AzureAIEngineerArticle = () => {
                 </div>
                 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                  Microsoft Azure AI Engineer
+                  Microsoft Azure AI Fundamentals
                 </h1>
                 
                 <p className="text-lg text-muted-foreground mb-6 max-w-3xl">
-                  My first associate level certification. Was an exciting learning journey discovering Natural language processing solutions, Cognitive services and countless other AI services in the Azure ecosystem during  the preparations for this exam.
+                  My introduction to the fascinating world of artificial intelligence on Azure. This certification sparked my passion for AI and laid the groundwork for all my future AI specializations.
                 </p>
                 
                 {/* Article Meta */}
                 <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-blue-500" />
+                    <Calendar className="w-4 h-4 text-cyan-500" />
                     <span>Completed 2025</span>
-                  
                   </div>
                   <div className="flex items-center gap-2">
-                    <ExternalLink className="w-4 h-4 text-purple-500" />
+                    <ExternalLink className="w-4 h-4 text-cyan-500" />
                     <a 
-                      href="https://learn.microsoft.com/en-us/certifications/azure-ai-engineer-associate/"
+                      href="https://learn.microsoft.com/en-us/certifications/azure-ai-fundamentals/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-purple-400 transition-colors"
+                      className="hover:text-cyan-400 transition-colors"
                     >
                       Official Certification
                     </a>
@@ -102,7 +101,7 @@ const AzureAIEngineerArticle = () => {
             <div className="bg-card border border-border rounded-xl p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4 text-foreground">Overview</h2>
               <p className="text-muted-foreground leading-relaxed">
-                The Microsoft Azure AI Engineer Associate certification validates expertise in designing and implementing AI solutions on the Azure platform. This comprehensive certification covers machine learning models, cognitive services, and AI application development.
+                The Microsoft Azure AI Fundamentals certification provides foundational knowledge of machine learning and artificial intelligence concepts on Azure. This certification covers AI workloads, machine learning principles, computer vision, natural language processing, and conversational AI, making it perfect for anyone starting their AI journey.
               </p>
             </div>
 
@@ -111,40 +110,43 @@ const AzureAIEngineerArticle = () => {
               <h2 className="text-2xl font-bold mb-6 text-foreground">🚀 My Certification Journey</h2>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">💭 Starting from scratch (again)</h3>
+                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">💭 Entering the AI World</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    When I first looked at the AI-102: Designing and Implementing Azure AI Solutions exam, I felt both excitement and anxiety. I had already earned AI-900, but coming from a non-technical background as a fresh graduate meant I knew there would be a steep climb ahead.
+                    The AI-900 was my first deep dive into artificial intelligence. Coming after completing AZ-900, I was eager to understand how AI services work on Azure. The certification introduced me to concepts that once seemed like science fiction - machine learning, computer vision, and natural language processing.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-3">
-                    Unlike peers who had formal CS courses, I had to build foundations as I went. Concepts like REST APIs, model training, prompt engineering, or computer vision weren't just theoretical — they had to be internalised by doing. Early on, I often felt lost browsing documentation or trying to map Microsoft Learn modules to real code.
+                    What struck me most was how accessible Azure makes AI. Services that would require months of development and deep expertise are available as APIs, ready to integrate into applications. This democratization of AI technology was eye-opening.
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">🧪 Labs as my lifeline</h3>
+                <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">🧪 Experimenting with AI Services</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Microsoft Learn's labs were a revelation. They forced me to break out of passive reading and into doing: building small generative AI apps, testing document intelligence, crafting vision models, or connecting language services. These hands-on modules became my playground.
+                    The hands-on labs were transformative. I built image classification models, created text analysis solutions, and experimented with conversational AI bots. Each lab showed me different facets of what AI can achieve - from recognizing objects in images to understanding sentiment in text.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-3">
-                    At times, I stepped outside the lab instructions—experimenting with tweaks, applying ideas that popped in my head, or combining features in new ways. That creative detour was where real learning happened.
+                    Working with Azure Cognitive Services and Azure Machine Learning gave me practical experience in using pre-built AI models and training custom ones. The ability to test different approaches and see immediate results made learning both fun and effective.
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">✨ Moments that mattered</h3>
+                <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">✨ Key Breakthroughs</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
-                      • When a custom entity recognition service finally began returning accurate classifications 🎯
+                      • Understanding machine learning concepts and model training 🤖
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      • When a deployed agent integrated cleanly into a workflow, matching my expectations 🔗
+                      • Building computer vision solutions for image analysis 👁️
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      • When I verified confidence scores, error margins, and tuning parameters to improve response quality 📊
+                      • Creating natural language processing applications 💬
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      • Implementing conversational AI with bots 🤝
                     </p>
                     <p className="text-muted-foreground leading-relaxed mt-4 font-medium">
-                      Those felt like small victories—but they added up. 🏆
+                      This certification ignited my passion for AI and set me on the path to specialization! 🏆
                     </p>
                   </div>
                 </div>
@@ -156,30 +158,22 @@ const AzureAIEngineerArticle = () => {
               <h2 className="text-2xl font-bold mb-4 text-foreground">🎯 Key Skills Acquired</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">🤖 Azure AI Services</h3>
-                  <p className="text-sm text-muted-foreground">Cognitive Services, Bot Framework, and AI-powered applications</p>
+                  <h3 className="text-lg font-semibold text-foreground">🤖 Machine Learning</h3>
+                  <p className="text-sm text-muted-foreground">Understanding ML concepts, model training, and Azure ML services</p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">🧠 Machine Learning</h3>
-                  <p className="text-sm text-muted-foreground">Azure ML, model training, and deployment pipelines</p>
+                  <h3 className="text-lg font-semibold text-foreground">👁️ Computer Vision</h3>
+                  <p className="text-sm text-muted-foreground">Image analysis, object detection, and facial recognition</p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">🔗 AI Integration</h3>
-                  <p className="text-sm text-muted-foreground">API integration, data processing, and solution architecture</p>
+                  <h3 className="text-lg font-semibold text-foreground">💬 Natural Language Processing</h3>
+                  <p className="text-sm text-muted-foreground">Text analysis, sentiment detection, and language understanding</p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">📊 Monitoring & Optimization</h3>
-                  <p className="text-sm text-muted-foreground">Performance monitoring, cost optimization, and best practices</p>
+                  <h3 className="text-lg font-semibold text-foreground">🤝 Conversational AI</h3>
+                  <p className="text-sm text-muted-foreground">Bot development and conversational interfaces</p>
                 </div>
               </div>
-            </div>
-
-            {/* Practical Applications */}
-            <div className="bg-card border border-border rounded-xl p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">💼 Practical Applications</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                This certification has enabled the implementation of AI solutions across various projects, from intelligent chatbots to predictive analytics systems. The knowledge gained continues to drive innovation in AI-powered applications. 🚀
-              </p>
             </div>
 
             {/* Recommended Resources */}
@@ -187,44 +181,29 @@ const AzureAIEngineerArticle = () => {
               <h2 className="text-2xl font-bold mb-6 text-foreground">📚 Recommended Free Resources</h2>
               
               <div className="space-y-6">
-                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-6">
+                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-6">
                   <h3 className="text-lg font-semibold mb-3 text-foreground">🎓 Microsoft Learn Course</h3>
                   <p className="text-muted-foreground mb-4">
-                    The official Microsoft Learn course for AI-102: Develop AI solutions in Azure provides comprehensive coverage of all exam topics including generative AI apps, AI agents, computer vision, and information extraction.
+                    The official AI-900 course covers fundamental AI concepts, Azure AI services, and hands-on labs. Perfect for beginners looking to understand AI capabilities and how to implement them on Azure.
                   </p>
                   <a 
-                    href="https://learn.microsoft.com/en-us/training/courses/ai-102t00"
+                    href="https://learn.microsoft.com/en-us/training/courses/ai-900t00"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
                   >
-                    📖 Access MS Learn Course
-                  </a>
-                </div>
-
-                <div className="bg-gradient-to-r from-red-500/10 to-pink-500/10 border border-red-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">📺 Supplementary Videos</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Video tutorials provide visual explanations for complex concepts and practical demonstrations that complement the written materials.
-                  </p>
-                  <a 
-                    href="https://youtu.be/scJ4mobwjBQ?si=aMNL8BpCa8PyMjgP"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
-                  >
-                    🎥 Watch Video Tutorials
+                    📖 Access AI-900 Course
                   </a>
                 </div>
 
                 <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-lg p-6">
                   <h3 className="text-lg font-semibold mb-3 text-foreground">📋 Study Methods</h3>
                   <p className="text-muted-foreground mb-4">
-                    Use the Microsoft Learn material as your primary resource for reading through concepts, and supplement with videos for harder topics that need visual explanation.
+                    Focus on understanding the different types of AI workloads and when to use each Azure AI service. The hands-on labs are crucial - make sure to complete them all and experiment beyond the instructions.
                   </p>
                   <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
                     <p className="text-green-400 font-medium">
-                      💡 Pro Tip: Reach out to me for detailed study methods and personalized tips!
+                      💡 Pro Tip: This certification is the perfect stepping stone to the AI-102 Azure AI Engineer certification!
                     </p>
                   </div>
                 </div>
@@ -249,4 +228,5 @@ const AzureAIEngineerArticle = () => {
   );
 };
 
-export default AzureAIEngineerArticle;
+export default AzureAIFundamentalsArticle;
+

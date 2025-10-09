@@ -9,6 +9,11 @@ import Contact from "./pages/Contact";
 import ProfessionalCertifications from "./pages/ProfessionalCertifications";
 import KeyProjects from "./pages/KeyProjects";
 import AzureAIEngineerArticle from "./pages/AzureAIEngineerArticle";
+import AzureFundamentalsArticle from "./pages/AzureFundamentalsArticle";
+import AzureAIFundamentalsArticle from "./pages/AzureAIFundamentalsArticle";
+import PowerPlatformFundamentalsArticle from "./pages/PowerPlatformFundamentalsArticle";
+import NLPAppliedSkillsArticle from "./pages/NLPAppliedSkillsArticle";
+import PowerAppsAppliedSkillsArticle from "./pages/PowerAppsAppliedSkillsArticle";
 import ThamizhumNaanumPodcast from "./pages/ThamizhumNaanumPodcast";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +32,11 @@ const App = () => (
           <Route path="/professional-certifications" element={<ProfessionalCertifications />} />
           <Route path="/key-projects" element={<KeyProjects />} />
           <Route path="/azure-ai-engineer" element={<AzureAIEngineerArticle />} />
+          <Route path="/azure-fundamentals" element={<AzureFundamentalsArticle />} />
+          <Route path="/azure-ai-fundamentals" element={<AzureAIFundamentalsArticle />} />
+          <Route path="/power-platform-fundamentals" element={<PowerPlatformFundamentalsArticle />} />
+          <Route path="/nlp-applied-skills" element={<NLPAppliedSkillsArticle />} />
+          <Route path="/powerapps-applied-skills" element={<PowerAppsAppliedSkillsArticle />} />
           <Route path="/thamizhum-naanum-podcast" element={<ThamizhumNaanumPodcast />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

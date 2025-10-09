@@ -3,6 +3,7 @@ import { ArrowLeft, Mic, Calendar, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import NetflixEpisodeCard from "@/components/series/NetflixEpisodeCard";
+import PodcastEpisodeCard from "@/components/series/PodcastEpisodeCard";
 
 const ThamizhumNaanumPodcast = () => {
   // Scroll to top when component mounts
@@ -10,10 +11,108 @@ const ThamizhumNaanumPodcast = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
-  // Generate 21 episodes with placeholder titles
-  const episodes = Array.from({ length: 21 }, (_, index) => ({
-    id: `episode-${index + 1}`,
-    title: `Episode ${index + 1}: -`,
+  // Common links for all episodes
+  const commonLinks = {
+    spotifyLink: "https://open.spotify.com/show/2mhQKOa23FJdVVaDwbzDkN?si=da1dac258b9b426f",
+    youtubeLink: "https://www.youtube.com/@zafir.tamizh/podcasts",
+  };
+
+  // Episodes 1-11 with proper titles and descriptions
+  const podcastEpisodes = [
+    {
+      id: "episode-1",
+      title: "Episode 1: Na Muthukumar 😭",
+      description: "What's your favourite Na Muthukumar line? Come hear what's mine!",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "8 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-2",
+      title: "Episode 2: கவிப்பேர-ரசு Vairamuthu",
+      description: "Exploring the poetic genius of Vairamuthu and his contribution to Tamil literature.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "10 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-3",
+      title: "Episode 3: கவிப்பேர-ரசு Vairamuthu Pt2",
+      description: "Continuing our journey through Vairamuthu's beautiful Tamil poetry and lyrics.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "12 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-4",
+      title: "Episode 4: Natpu na enna theriyuma! ❤️‍🩹",
+      description: "Come join me this week to talk about friendship through some tamil movies, songs and literature!",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "15 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-5",
+      title: "Episode 5: Natpu na enna theriyuma! ❤️‍🩹 (Pt 2)",
+      description: "Continuing our exploration of friendship in Tamil cinema and literature.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "14 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-6",
+      title: "Episode 6: Padi da parama! 😤",
+      description: "Let's talk about education and its importance through Tamil culture and language.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "11 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-7",
+      title: "Episode 7: Conversations! 🗣️",
+      description: "Exploring the art of conversations in Tamil culture and daily life.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "9 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-8",
+      title: "Episode 8: Kavignar Vaali! 🤩",
+      description: "Celebrating the legendary Tamil poet and lyricist Kavignar Vaali's timeless works.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "13 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-9",
+      title: "Episode 9: Na Muthukumarin kavithai 🤩",
+      description: "Diving deep into Na Muthukumar's beautiful poetry and poetic expressions.",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "10 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-10",
+      title: "Episode 10: Tamil Nadu! Tamil country? 🤔",
+      description: "Have you wondered how a state got its name that translates to 'Tamil Country'? Come join me in exploring the name Tamil Nadu a little!",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "6 min",
+      ...commonLinks,
+    },
+    {
+      id: "episode-11",
+      title: "Episode 11: Veyyon! 🌞",
+      description: "Come join me in learning a new tamil word!",
+      thumbnail: "/Thamizhum Naanum .png",
+      duration: "7 min",
+      ...commonLinks,
+    },
+  ];
+
+  // Generate remaining 10 episodes with placeholder titles
+  const remainingEpisodes = Array.from({ length: 10 }, (_, index) => ({
+    id: `episode-${index + 12}`,
+    title: `Episode ${index + 12}: -`,
     description: "Tamil storytelling and cultural narratives exploring traditions and modern perspectives.",
     thumbnail: "/Thamizhum Naanum .png",
     duration: `${Math.floor(Math.random() * 30) + 20} min`,
@@ -21,6 +120,8 @@ const ThamizhumNaanumPodcast = () => {
     badge: "Podcast",
     link: "#",
   }));
+
+  const allEpisodes = [...podcastEpisodes, ...remainingEpisodes];
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,10 +171,10 @@ const ThamizhumNaanumPodcast = () => {
                     <Calendar className="w-4 h-4 text-purple-500" />
                     <span className="text-muted-foreground">Started 2024</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="w-4 h-4 text-green-500" />
-                    <span className="text-muted-foreground">{episodes.length} Episodes</span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <Target className="w-4 h-4 text-green-500" />
+                  <span className="text-muted-foreground">{allEpisodes.length} Episodes</span>
+                </div>
                   <div className="flex items-center gap-2">
                     <Mic className="w-4 h-4 text-yellow-500" />
                     <span className="text-muted-foreground">Tamil Culture</span>
@@ -96,18 +197,31 @@ const ThamizhumNaanumPodcast = () => {
           <div className="flex items-center justify-between">
             <h2 className="text-2xl sm:text-3xl font-bold">Episodes</h2>
             <div className="text-sm text-muted-foreground">
-              {episodes.length} episode{episodes.length !== 1 ? 's' : ''}
+              {allEpisodes.length} episode{allEpisodes.length !== 1 ? 's' : ''}
             </div>
           </div>
 
-          {/* Netflix-style Episodes List */}
+          {/* Episodes List */}
           <div className="space-y-4">
-            {episodes.map((episode, index) => (
+            {/* Episodes 1-11 with Spotify/YouTube links */}
+            {podcastEpisodes.map((episode, index) => (
               <motion.div
                 key={episode.id}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 + (index * 0.05) }}
+              >
+                <PodcastEpisodeCard {...episode} />
+              </motion.div>
+            ))}
+
+            {/* Remaining Episodes - Placeholders */}
+            {remainingEpisodes.map((episode, index) => (
+              <motion.div
+                key={episode.id}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 + ((podcastEpisodes.length + index) * 0.05) }}
               >
                 <NetflixEpisodeCard {...episode} />
               </motion.div>

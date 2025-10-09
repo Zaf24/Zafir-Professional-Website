@@ -3,7 +3,7 @@ import { ArrowLeft, Calendar, Clock, Award, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-const AzureAIEngineerArticle = () => {
+const PowerAppsAppliedSkillsArticle = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -39,8 +39,8 @@ const AzureAIEngineerArticle = () => {
               <div className="flex-shrink-0">
                 <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center border border-border overflow-hidden">
                   <img
-                    src="/microsoft-certified-associate.svg"
-                    alt="Microsoft Azure AI Engineer"
+                    src="/applied-skill.svg"
+                    alt="Applied Skills: Build and Manage Model Driven Apps with Power Apps and Dataverse"
                     className="w-full h-full object-contain p-4"
                   />
                 </div>
@@ -49,18 +49,18 @@ const AzureAIEngineerArticle = () => {
               {/* Article Info */}
               <div className="flex-grow">
                 <div className="flex items-center gap-3 mb-3">
-                  <Award className="w-6 h-6 text-yellow-500" />
-                  <span className="text-sm font-semibold text-yellow-400 bg-yellow-500/20 px-3 py-1 rounded-full">
-                    Microsoft Certified
+                  <Award className="w-6 h-6 text-blue-500" />
+                  <span className="text-sm font-semibold text-blue-400 bg-blue-500/20 px-3 py-1 rounded-full">
+                    Applied Skills
                   </span>
                 </div>
                 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                  Microsoft Azure AI Engineer
+                  Build and Manage Model Driven Apps with Power Apps and Dataverse
                 </h1>
                 
                 <p className="text-lg text-muted-foreground mb-6 max-w-3xl">
-                  My first associate level certification. Was an exciting learning journey discovering Natural language processing solutions, Cognitive services and countless other AI services in the Azure ecosystem during  the preparations for this exam.
+                  Practical certification covering the development of model-driven applications using Power Apps and Dataverse for business process automation and data management.
                 </p>
                 
                 {/* Article Meta */}
@@ -68,17 +68,17 @@ const AzureAIEngineerArticle = () => {
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-blue-500" />
                     <span>Completed 2025</span>
-                  
                   </div>
+                  
                   <div className="flex items-center gap-2">
                     <ExternalLink className="w-4 h-4 text-purple-500" />
                     <a 
-                      href="https://learn.microsoft.com/en-us/certifications/azure-ai-engineer-associate/"
+                      href="https://learn.microsoft.com/en-us/certifications/applied-skills/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-purple-400 transition-colors"
                     >
-                      Official Certification
+                      Applied Skills Program
                     </a>
                   </div>
                 </div>
@@ -102,7 +102,7 @@ const AzureAIEngineerArticle = () => {
             <div className="bg-card border border-border rounded-xl p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4 text-foreground">Overview</h2>
               <p className="text-muted-foreground leading-relaxed">
-                The Microsoft Azure AI Engineer Associate certification validates expertise in designing and implementing AI solutions on the Azure platform. This comprehensive certification covers machine learning models, cognitive services, and AI application development.
+                The Applied Skills: Build and Manage Model Driven Apps with Power Apps and Dataverse certification validates practical ability to create business applications using Microsoft's low-code platform. This assessment covers data modeling, app development, and business process automation.
               </p>
             </div>
 
@@ -112,39 +112,42 @@ const AzureAIEngineerArticle = () => {
               
               <div className="space-y-6">
                 <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">💭 Starting from scratch (again)</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">💭 Exploring Low-Code Development</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    When I first looked at the AI-102: Designing and Implementing Azure AI Solutions exam, I felt both excitement and anxiety. I had already earned AI-900, but coming from a non-technical background as a fresh graduate meant I knew there would be a steep climb ahead.
+                    Coming from traditional development, the Power Platform represented a paradigm shift toward low-code solutions. The Applied Skills assessment challenged me to think differently about application development and business process automation.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-3">
-                    Unlike peers who had formal CS courses, I had to build foundations as I went. Concepts like REST APIs, model training, prompt engineering, or computer vision weren't just theoretical — they had to be internalised by doing. Early on, I often felt lost browsing documentation or trying to map Microsoft Learn modules to real code.
+                    The hands-on nature meant I had to quickly adapt to the Power Apps interface, understand Dataverse data modeling, and implement business logic through configuration rather than code.
                   </p>
                 </div>
 
                 <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">🧪 Labs as my lifeline</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">🏗️ Building Model-Driven Applications</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Microsoft Learn's labs were a revelation. They forced me to break out of passive reading and into doing: building small generative AI apps, testing document intelligence, crafting vision models, or connecting language services. These hands-on modules became my playground.
+                    The assessment required creating complete business applications with proper data relationships, security roles, and business processes. I had to design entity models, configure forms and views, and implement automation workflows.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-3">
-                    At times, I stepped outside the lab instructions—experimenting with tweaks, applying ideas that popped in my head, or combining features in new ways. That creative detour was where real learning happened.
+                    The time constraint added pressure to work efficiently while ensuring the applications would actually meet business requirements and be maintainable by citizen developers.
                   </p>
                 </div>
 
                 <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">✨ Moments that mattered</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">✨ Key Achievements</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
-                      • When a custom entity recognition service finally began returning accurate classifications 🎯
+                      • Designed a comprehensive Dataverse data model with proper relationships 📊
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      • When a deployed agent integrated cleanly into a workflow, matching my expectations 🔗
+                      • Built model-driven apps with custom forms, views, and dashboards 📱
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      • When I verified confidence scores, error margins, and tuning parameters to improve response quality 📊
+                      • Implemented business process flows and automation workflows ⚡
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      • Configured security roles and data access policies 🔐
                     </p>
                     <p className="text-muted-foreground leading-relaxed mt-4 font-medium">
-                      Those felt like small victories—but they added up. 🏆
+                      The low-code approach proved incredibly powerful for rapid business application development! 🏆
                     </p>
                   </div>
                 </div>
@@ -153,23 +156,23 @@ const AzureAIEngineerArticle = () => {
 
             {/* Skills Gained */}
             <div className="bg-card border border-border rounded-xl p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">🎯 Key Skills Acquired</h2>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">🎯 Key Skills Demonstrated</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">🤖 Azure AI Services</h3>
-                  <p className="text-sm text-muted-foreground">Cognitive Services, Bot Framework, and AI-powered applications</p>
+                  <h3 className="text-lg font-semibold text-foreground">🗄️ Dataverse Design</h3>
+                  <p className="text-sm text-muted-foreground">Entity modeling, relationships, and data governance</p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">🧠 Machine Learning</h3>
-                  <p className="text-sm text-muted-foreground">Azure ML, model training, and deployment pipelines</p>
+                  <h3 className="text-lg font-semibold text-foreground">📱 Model-Driven Apps</h3>
+                  <p className="text-sm text-muted-foreground">Form design, view configuration, and user experience</p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">🔗 AI Integration</h3>
-                  <p className="text-sm text-muted-foreground">API integration, data processing, and solution architecture</p>
+                  <h3 className="text-lg font-semibold text-foreground">⚡ Business Process Flows</h3>
+                  <p className="text-sm text-muted-foreground">Workflow automation and process optimization</p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-foreground">📊 Monitoring & Optimization</h3>
-                  <p className="text-sm text-muted-foreground">Performance monitoring, cost optimization, and best practices</p>
+                  <h3 className="text-lg font-semibold text-foreground">🔐 Security & Governance</h3>
+                  <p className="text-sm text-muted-foreground">Role-based access control and data security</p>
                 </div>
               </div>
             </div>
@@ -178,7 +181,7 @@ const AzureAIEngineerArticle = () => {
             <div className="bg-card border border-border rounded-xl p-8 mb-8">
               <h2 className="text-2xl font-bold mb-4 text-foreground">💼 Practical Applications</h2>
               <p className="text-muted-foreground leading-relaxed">
-                This certification has enabled the implementation of AI solutions across various projects, from intelligent chatbots to predictive analytics systems. The knowledge gained continues to drive innovation in AI-powered applications. 🚀
+                This Applied Skills certification has enabled me to rapidly prototype and deploy business applications for clients, from customer relationship management systems to inventory tracking solutions. The low-code approach allows for faster delivery while maintaining enterprise-grade functionality. 🚀
               </p>
             </div>
 
@@ -188,43 +191,28 @@ const AzureAIEngineerArticle = () => {
               
               <div className="space-y-6">
                 <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">🎓 Microsoft Learn Course</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">🎓 Power Platform Learn Modules</h3>
                   <p className="text-muted-foreground mb-4">
-                    The official Microsoft Learn course for AI-102: Develop AI solutions in Azure provides comprehensive coverage of all exam topics including generative AI apps, AI agents, computer vision, and information extraction.
+                    Focus on Dataverse fundamentals, model-driven apps, and Power Automate workflows to build a solid foundation for the assessment.
                   </p>
                   <a 
-                    href="https://learn.microsoft.com/en-us/training/courses/ai-102t00"
+                    href="https://learn.microsoft.com/en-us/power-platform/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
                   >
-                    📖 Access MS Learn Course
-                  </a>
-                </div>
-
-                <div className="bg-gradient-to-r from-red-500/10 to-pink-500/10 border border-red-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">📺 Supplementary Videos</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Video tutorials provide visual explanations for complex concepts and practical demonstrations that complement the written materials.
-                  </p>
-                  <a 
-                    href="https://youtu.be/scJ4mobwjBQ?si=aMNL8BpCa8PyMjgP"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
-                  >
-                    🎥 Watch Video Tutorials
+                    📖 Power Platform Documentation
                   </a>
                 </div>
 
                 <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">📋 Study Methods</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">📋 Study Approach</h3>
                   <p className="text-muted-foreground mb-4">
-                    Use the Microsoft Learn material as your primary resource for reading through concepts, and supplement with videos for harder topics that need visual explanation.
+                    Practice building small model-driven apps using the Power Platform trial environment. Focus on data modeling and business process design rather than just UI configuration.
                   </p>
                   <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
                     <p className="text-green-400 font-medium">
-                      💡 Pro Tip: Reach out to me for detailed study methods and personalized tips!
+                      💡 Pro Tip: Think like a business analyst - understand the requirements before building the solution!
                     </p>
                   </div>
                 </div>
@@ -249,4 +237,4 @@ const AzureAIEngineerArticle = () => {
   );
 };
 
-export default AzureAIEngineerArticle;
+export default PowerAppsAppliedSkillsArticle;
