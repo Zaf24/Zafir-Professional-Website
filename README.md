@@ -60,13 +60,12 @@ The website follows a **Netflix-inspired design language** with:
 
 ## 📱 Features
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile
 - **Smooth Animations**: Framer Motion-powered transitions
 - **Interactive Elements**: Hover effects and micro-interactions
 - **Modern UI**: Clean, professional interface using shadcn/ui
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Performance**: Fast loading with Vite's optimized build
-
+- **Responsive Design**: Optimized for desktop, tablet, and mobile (In progress)
 ## 🎯 Target Audience
 
 This portfolio is designed to impress:
