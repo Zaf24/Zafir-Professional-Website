@@ -452,14 +452,16 @@ const SeriesRail = () => {
   const scrollLeft = (categoryIndex: number) => {
     const scrollContainer = scrollRefs.current[categoryIndex];
     if (scrollContainer) {
-      scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
+      const scrollAmount = window.innerWidth < 640 ? -280 : -320;
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
   const scrollRight = (categoryIndex: number) => {
     const scrollContainer = scrollRefs.current[categoryIndex];
     if (scrollContainer) {
-      scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+      const scrollAmount = window.innerWidth < 640 ? 280 : 320;
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
@@ -498,19 +500,19 @@ const SeriesRail = () => {
                 {/* Left Arrow */}
                 <button
                   onClick={() => scrollLeft(categoryIndex)}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border border-border rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border border-border rounded-full p-2 sm:p-2 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:scale-110 touch-manipulation"
                   aria-label="Scroll left"
                 >
-                  <ChevronLeft className="w-5 h-5 text-foreground" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
                 </button>
 
                 {/* Right Arrow */}
                 <button
                   onClick={() => scrollRight(categoryIndex)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background border border-border rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border border-border rounded-full p-2 sm:p-2 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:scale-110 touch-manipulation"
                   aria-label="Scroll right"
                 >
-                  <ChevronRight className="w-5 h-5 text-foreground" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
                 </button>
 
                 <motion.div
@@ -519,10 +521,11 @@ const SeriesRail = () => {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, staggerChildren: 0.1 }}
-                  className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide hover:scrollbar-show"
+                  className="flex gap-3 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide hover:scrollbar-show touch-pan-x"
                   style={{
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
+                    WebkitOverflowScrolling: 'touch',
                   }}
                 >
                   {category.series.map((series, seriesIndex) => (

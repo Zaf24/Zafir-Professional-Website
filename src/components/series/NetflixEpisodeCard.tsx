@@ -32,14 +32,14 @@ const NetflixEpisodeCard = ({
   const CardContent = (
     <motion.div
       whileHover={{ scale: 1.02, x: 8 }}
-      className="group cursor-pointer bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-blue-500/50 flex gap-4 h-32"
+      className="group cursor-pointer bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-blue-500/50 flex flex-col sm:flex-row gap-3 sm:gap-4 h-auto sm:h-32"
     >
       {/* Thumbnail */}
-      <div className="relative w-48 h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex-shrink-0 overflow-hidden">
+      <div className="relative w-full sm:w-48 h-32 sm:h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex-shrink-0 overflow-hidden">
         <img
           src={thumbnail}
           alt={title}
-          className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain p-2 sm:p-2 group-hover:scale-105 transition-transform duration-300"
         />
         
         {/* Status Badge */}
@@ -54,39 +54,41 @@ const NetflixEpisodeCard = ({
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             whileHover={{ scale: 1 }}
-            className="bg-white/90 hover:bg-white text-black rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300"
+            className="bg-white/90 hover:bg-white text-black rounded-full p-2 sm:p-2 opacity-0 group-hover:opacity-100 transition-all duration-300"
           >
-            <Play className="w-4 h-4 ml-0.5" />
+            <Play className="w-4 h-4 sm:w-4 sm:h-4 ml-0.5" />
           </motion.button>
         </div>
       </div>
 
       {/* Content */}
-      <div className="flex-grow p-4 flex flex-col justify-center min-w-0">
+      <div className="flex-grow p-3 sm:p-4 flex flex-col justify-center min-w-0">
         <div className="flex items-start justify-between mb-2">
           <div className="flex items-center gap-2 min-w-0">
-            <h3 className="text-lg font-bold text-foreground truncate">{title}</h3>
+            <h3 className="text-base sm:text-lg font-bold text-foreground truncate">{title}</h3>
             {badge && (
               <Award className="w-4 h-4 text-yellow-500 flex-shrink-0" />
             )}
           </div>
         </div>
         
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-3 flex-grow">{description}</p>
+        <p className="text-sm sm:text-sm text-muted-foreground line-clamp-2 sm:line-clamp-2 mb-3 flex-grow">{description}</p>
         
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
+          <div className="flex items-center gap-3 sm:gap-4 text-xs text-muted-foreground">
             {duration && (
               <div className="flex items-center gap-1">
                 <Clock className="w-3 h-3" />
-                {duration}
+                <span className="hidden sm:inline">{duration}</span>
               </div>
             )}
             <div className="flex items-center gap-1">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              {status === "completed" && "Completed"}
-              {status === "in-progress" && "In Progress"}
-              {status === "upcoming" && "Upcoming"}
+              <span className="text-xs">
+                {status === "completed" && "Completed"}
+                {status === "in-progress" && "In Progress"}
+                {status === "upcoming" && "Upcoming"}
+              </span>
             </div>
           </div>
           
@@ -94,7 +96,7 @@ const NetflixEpisodeCard = ({
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 text-xs"
+              className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 text-xs sm:text-xs self-start sm:self-auto"
               onClick={(e) => {
                 e.stopPropagation();
                 if (isInternalLink) {
@@ -107,12 +109,14 @@ const NetflixEpisodeCard = ({
               {isInternalLink ? (
                 <>
                   <Play className="w-3 h-3" />
-                  Read Article
+                  <span className="hidden sm:inline">Read Article</span>
+                  <span className="sm:hidden">Read</span>
                 </>
               ) : (
                 <>
                   <ExternalLink className="w-3 h-3" />
-                  View
+                  <span className="hidden sm:inline">View</span>
+                  <span className="sm:hidden">Open</span>
                 </>
               )}
             </motion.button>
