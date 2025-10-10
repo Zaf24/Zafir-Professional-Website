@@ -39,7 +39,7 @@ const NLPAppliedSkillsArticle = () => {
               <div className="flex-shrink-0">
                 <div className="w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center border border-border overflow-hidden">
                   <img
-                    src="/applied-skill.svg"
+                    src="./applied-skill.svg"
                     alt="Applied Skills: Build Natural Language Processing Solution"
                     className="w-full h-full object-contain p-4"
                   />
