@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Clock, Award, ExternalLink, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import type { ReactNode } from "react";
 
 interface NetflixEpisodeCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface NetflixEpisodeCardProps {
   status?: "completed" | "in-progress" | "upcoming";
   badge?: string;
   link?: string;
+  icon?: ReactNode;
 }
 
 const NetflixEpisodeCard = ({ 
@@ -19,7 +21,8 @@ const NetflixEpisodeCard = ({
   duration, 
   status = "completed",
   badge,
-  link 
+  link,
+  icon
 }: NetflixEpisodeCardProps) => {
   const statusColors = {
     completed: "bg-green-500/20 text-green-400 border-green-500/30",
@@ -36,11 +39,19 @@ const NetflixEpisodeCard = ({
     >
       {/* Thumbnail */}
       <div className="relative w-full sm:w-48 h-32 sm:h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex-shrink-0 overflow-hidden">
-        <img
-          src={thumbnail}
-          alt={title}
-          className="w-full h-full object-contain p-2 sm:p-2 group-hover:scale-105 transition-transform duration-300"
-        />
+        {icon ? (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="group-hover:scale-105 transition-transform duration-300">
+              {icon}
+            </div>
+          </div>
+        ) : (
+          <img
+            src={thumbnail}
+            alt={title}
+            className="w-full h-full object-contain p-2 sm:p-2 group-hover:scale-105 transition-transform duration-300"
+          />
+        )}
         
         {/* Status Badge */}
         <div className={`absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-semibold border ${statusColors[status]}`}>

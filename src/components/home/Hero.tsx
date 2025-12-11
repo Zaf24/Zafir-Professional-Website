@@ -17,15 +17,15 @@ const Hero = () => {
       </div>
 
       <div className="absolute inset-0 z-20 flex items-end pb-16 sm:pb-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-3xl"
+              className="max-w-3xl lg:max-w-4xl xl:max-w-5xl"
             >
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -39,7 +39,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 sm:mb-8"
+              className="text-lg sm:text-xl md:text-2xl xl:text-3xl text-muted-foreground mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}

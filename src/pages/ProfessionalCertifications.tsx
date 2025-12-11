@@ -39,6 +39,15 @@ const ProfessionalCertifications = () => {
       link: "/azure-ai-fundamentals",
     },
     {
+      id: "azure-data-fundamentals",
+      title: "Microsoft Azure Data Fundamentals",
+      description: "Foundational certification focused on core data concepts on Azure: how data is defined, stored, processed, governed—and made meaningful for analytics and AI.",
+      thumbnail: "./microsoft-certified-fundamentals.svg",
+      status: "completed" as const,
+      badge: "Microsoft Certified",
+      link: "/azure-data-fundamentals",
+    },
+    {
       id: "power-platforms-fundamentals",
       title: "MS Power Platforms Fundamentals",
       description: "Foundation certification covering Power Platform core components including Power Apps, Power Automate, Power BI, and Power Virtual Agents.",

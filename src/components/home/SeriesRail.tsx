@@ -329,7 +329,7 @@ const categoriesData: Category[] = [
         id: "certifications",
         title: "Professional Certifications",
         description: "Microsoft AI certifications and technical credentials",
-        episodeCount: 6,
+            episodeCount: 7,
         customBackground: <CertificationBackground />,
         link: "/professional-certifications",
       },
@@ -371,16 +371,17 @@ const categoriesData: Category[] = [
         link: "/thamizhum-naanum-podcast",
       },
       {
+        id: "writing",
+        title: "Writing & Content",
+        description: "Articles, blogs, and content creation",
+        episodeCount: 1,
+        link: "/writing-content",
+      },
+      {
         id: "essays",
         title: "Thought Leadership",
         description: "Strategic insights on technology and innovation",
         episodeCount: 15,
-      },
-      {
-        id: "writing",
-        title: "Writing & Content",
-        description: "Articles, blogs, and content creation",
-        episodeCount: 10,
       },
       {
         id: "storytelling",
