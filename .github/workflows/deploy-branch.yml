@@ -29,6 +29,8 @@ jobs:
 
       - name: Build
         run: bun run build
+      - name: Disable Jekyll
+        run: echo "" > dist/.nojekyll
 
       - name: Publish dist to docs/ on main
         uses: JamesIves/github-pages-deploy-action@v4
