@@ -31,6 +31,8 @@ jobs:
         run: bun install --frozen-lockfile
       - name: Build
         run: bun run build
+      - name: Disable Jekyll
+        run: echo "" > dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
