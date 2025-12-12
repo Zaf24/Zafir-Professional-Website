@@ -20,6 +20,9 @@ import PowerAppsAppliedSkillsArticle from "./pages/PowerAppsAppliedSkillsArticle
 import ThamizhumNaanumPodcast from "./pages/ThamizhumNaanumPodcast";
 import NotFound from "./pages/NotFound";
 import SystemsVsGoalsArticle from "./pages/SystemsVsGoalsArticle";
+import LivingLifeFullestArticle from "./pages/LivingLifeFullestArticle";
+import LookWithinArticle from "./pages/LookWithinArticle";
+import ReduceAnxietyTipsArticle from "./pages/ReduceAnxietyTipsArticle";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +49,9 @@ const App = () => (
           <Route path="/powerapps-applied-skills" element={<PowerAppsAppliedSkillsArticle />} />
           <Route path="/thamizhum-naanum-podcast" element={<ThamizhumNaanumPodcast />} />
           <Route path="/systems-vs-goals" element={<SystemsVsGoalsArticle />} />
+          <Route path="/living-life-fullest" element={<LivingLifeFullestArticle />} />
+          <Route path="/look-within" element={<LookWithinArticle />} />
+          <Route path="/reduce-anxiety-tips" element={<ReduceAnxietyTipsArticle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

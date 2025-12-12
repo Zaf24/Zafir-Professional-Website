@@ -54,22 +54,22 @@ const SystemsVsGoalsArticle = () => {
                   Systems {'>'} Goals: Why it’s important to distinguish
                 </h1>
                 
-                <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-4 text-sm">
+                  <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-4 h-4 text-purple-500" />
                     <span>Published 2025</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <ExternalLink className="w-4 h-4 text-purple-500" />
-                    <a 
-                      href="https://www.linkedin.com/pulse/systems-goals-why-important-distinguish-mohamed-zafir/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-purple-400 transition-colors"
-                    >
-                      Original on LinkedIn
-                    </a>
-                  </div>
+                  <motion.a
+                    href="https://www.linkedin.com/pulse/systems-goals-why-important-distinguish-mohamed-zafir/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Original on LinkedIn</span>
+                  </motion.a>
                 </div>
               </div>
             </div>

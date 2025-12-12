@@ -374,7 +374,7 @@ const categoriesData: Category[] = [
         id: "writing",
         title: "Writing & Content",
         description: "Articles, blogs, and content creation",
-        episodeCount: 1,
+        episodeCount: 4,
         link: "/writing-content",
       },
       {
