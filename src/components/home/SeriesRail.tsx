@@ -450,21 +450,16 @@ const categoriesData: Category[] = [
 const SeriesRail = () => {
   const scrollRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const scrollLeft = (categoryIndex: number) => {
+  const scrollByCard = (categoryIndex: number, direction: 1 | -1) => {
     const scrollContainer = scrollRefs.current[categoryIndex];
-    if (scrollContainer) {
-      const scrollAmount = window.innerWidth < 640 ? -280 : -320;
-      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
+    if (!scrollContainer) return;
+    const firstCard = scrollContainer.querySelector<HTMLElement>('[data-card]');
+    const cardWidth = firstCard ? firstCard.offsetWidth + 16 : window.innerWidth < 640 ? 256 : 336;
+    scrollContainer.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
   };
 
-  const scrollRight = (categoryIndex: number) => {
-    const scrollContainer = scrollRefs.current[categoryIndex];
-    if (scrollContainer) {
-      const scrollAmount = window.innerWidth < 640 ? 280 : 320;
-      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+  const scrollLeft = (categoryIndex: number) => scrollByCard(categoryIndex, -1);
+  const scrollRight = (categoryIndex: number) => scrollByCard(categoryIndex, 1);
 
   return (
     <section id="my-journey" className="py-12 sm:py-16 lg:py-20">
@@ -476,9 +471,9 @@ const SeriesRail = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">My Journey</h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
-            Explore my journey through different categories, each containing multiple series of experiences and achievements.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 tracking-tight">My Journey</h2>
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            Explore my journey through different categories — each containing multiple series of experiences and achievements.
           </p>
         </motion.div>
 
@@ -492,28 +487,28 @@ const SeriesRail = () => {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               className="space-y-4 sm:space-y-6"
             >
-              <div className="flex items-center gap-3">
-                <category.icon className="w-6 h-6 text-foreground" />
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground">{category.title}</h3>
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <category.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" strokeWidth={2.25} />
+                <h3 className="text-lg sm:text-2xl font-bold text-foreground tracking-tight">{category.title}</h3>
               </div>
               
               <div className="relative group">
-                {/* Left Arrow */}
+                {/* Left Arrow - subtle on mobile, hover on desktop */}
                 <button
                   onClick={() => scrollLeft(categoryIndex)}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border border-border rounded-full p-2 sm:p-2 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:scale-110 touch-manipulation"
+                  className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/95 hover:bg-background border border-border rounded-full p-2 items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 shadow-lg touch-manipulation"
                   aria-label="Scroll left"
                 >
-                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
+                  <ChevronLeft className="w-5 h-5 text-foreground" />
                 </button>
 
                 {/* Right Arrow */}
                 <button
                   onClick={() => scrollRight(categoryIndex)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border border-border rounded-full p-2 sm:p-2 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:scale-110 touch-manipulation"
+                  className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/95 hover:bg-background border border-border rounded-full p-2 items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 shadow-lg touch-manipulation"
                   aria-label="Scroll right"
                 >
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
+                  <ChevronRight className="w-5 h-5 text-foreground" />
                 </button>
 
                 <motion.div
@@ -522,16 +517,18 @@ const SeriesRail = () => {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, staggerChildren: 0.1 }}
-                  className="flex gap-3 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide hover:scrollbar-show touch-pan-x"
+                  className="flex gap-3 sm:gap-5 overflow-x-auto pb-4 sm:pb-6 snap-x snap-mandatory scrollbar-hide hover:scrollbar-show touch-pan-x -mx-4 sm:mx-0 px-4 sm:px-0"
                   style={{
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
                     WebkitOverflowScrolling: 'touch',
+                    scrollPaddingLeft: '1rem',
                   }}
                 >
                   {category.series.map((series, seriesIndex) => (
                     <motion.div
                       key={series.id}
+                      data-card
                       initial={{ opacity: 0, x: 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -552,8 +549,8 @@ const SeriesRail = () => {
                   ))}
                 </motion.div>
 
-                <div className="absolute left-0 top-0 bottom-6 w-8 sm:w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-6 w-8 sm:w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-6 w-6 sm:w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-6 w-6 sm:w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
               </div>
             </motion.div>
           ))}

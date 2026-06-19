@@ -18,10 +18,10 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-card to-accent/20 border border-border rounded-xl p-8 sm:p-12 max-w-5xl mx-auto"
+            className="bg-gradient-to-br from-card to-accent/20 border border-border rounded-2xl p-6 sm:p-12 max-w-5xl mx-auto"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">My Story</h2>
-            <div className="space-y-4 text-muted-foreground text-base sm:text-lg">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 tracking-tight">My Story</h2>
+            <div className="space-y-4 text-muted-foreground text-sm sm:text-lg leading-relaxed">
               <p>
                 From the basketball court to the boardroom, from Tamil storytelling to cutting-edge AI development,
                 my journey has been anything but conventional.

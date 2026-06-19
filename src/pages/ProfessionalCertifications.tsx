@@ -80,15 +80,15 @@ const ProfessionalCertifications = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center gap-4 mb-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
+          <div className="flex items-center gap-4 mb-5 sm:mb-6">
             <Link to="/">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-2 text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors py-2 -ml-2 pl-2 pr-3 rounded-lg hover:bg-white/5"
               >
-                <ArrowLeft className="w-5 h-5" />
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                 Back to Home
               </motion.button>
             </Link>
@@ -101,21 +101,21 @@ const ProfessionalCertifications = () => {
             className="space-y-6"
           >
             {/* Series Header */}
-            <div className="flex items-start gap-6">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center border border-border">
-                  <Award className="w-12 h-12 sm:w-16 sm:h-16 text-blue-500" />
+                <div className="w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center border border-border">
+                  <Award className="w-8 h-8 sm:w-16 sm:h-16 text-blue-500" strokeWidth={2} />
                 </div>
               </div>
               
-              <div className="flex-grow">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">Professional Certifications</h1>
-                <p className="text-lg text-muted-foreground mb-4 max-w-3xl">
+              <div className="flex-grow min-w-0">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-2 tracking-tight">Professional Certifications</h1>
+                <p className="text-sm sm:text-lg text-muted-foreground mb-4 max-w-3xl leading-relaxed">
                   Microsoft AI certifications and technical credentials that validate expertise in cutting-edge technologies and professional development.
                 </p>
                 
                 {/* Series Stats */}
-                <div className="flex flex-wrap gap-6 text-sm">
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-blue-500" />
                     <span className="text-muted-foreground">Started 2023</span>

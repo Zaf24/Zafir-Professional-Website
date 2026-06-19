@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { LucideIcon, Clock } from "lucide-react";
+import { LucideIcon, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface SeriesCardProps {
@@ -30,9 +30,9 @@ const SeriesCard = ({ title, description, color, icon: Icon, episodeCount, backg
 
   const CardContent = (
     <motion.div
-      whileHover={{ scale: link ? 1.1 : 1.02, y: link ? -15 : -5 }}
-      whileTap={{ scale: 0.95 }}
-      className={`relative group ${link ? 'cursor-pointer' : 'cursor-default'} rounded-xl overflow-hidden bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} border border-border transition-all duration-300 hover:shadow-2xl w-[280px] sm:w-[320px] h-[200px] sm:h-[240px] flex-shrink-0`}
+      whileHover={{ scale: link ? 1.06 : 1.02, y: link ? -10 : -4 }}
+      whileTap={{ scale: 0.97 }}
+      className={`relative group ${link ? 'cursor-pointer' : 'cursor-default'} rounded-xl overflow-hidden bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} border border-border transition-all duration-300 hover:shadow-2xl w-[240px] sm:w-[320px] h-[200px] sm:h-[260px] flex-shrink-0`}
     >
       {/* Background Image */}
       {backgroundImage && (
@@ -61,36 +61,26 @@ const SeriesCard = ({ title, description, color, icon: Icon, episodeCount, backg
         </div>
       )}
 
-      <div className="relative z-10 p-6 sm:p-8 h-full flex flex-col">
-        <div className="flex items-start justify-between mb-4">
-          <Icon className={`w-10 h-10 sm:w-12 sm:h-12 ${iconColorClasses[color as keyof typeof iconColorClasses]}`} />
-          <span className="text-xs sm:text-sm text-muted-foreground bg-card/80 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
+      <div className="relative z-10 p-4 sm:p-5 h-full flex flex-col">
+        <div className="flex items-start justify-between gap-2 mb-2 sm:mb-3">
+          <Icon className={`w-8 h-8 sm:w-10 sm:h-10 ${iconColorClasses[color as keyof typeof iconColorClasses]}`} strokeWidth={2} />
+          <span className="text-[10px] sm:text-xs text-muted-foreground bg-card/80 backdrop-blur-sm px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap mt-0.5">
             {episodeCount} episodes
           </span>
         </div>
 
-        <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-foreground">{title}</h3>
-        <p className="text-sm sm:text-base text-muted-foreground line-clamp-2 flex-grow">{description}</p>
+        <h3 className="text-base sm:text-xl font-bold mb-1.5 sm:mb-2 text-foreground leading-snug line-clamp-2 tracking-tight">{title}</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2 sm:line-clamp-3 flex-grow leading-snug">{description}</p>
 
         {link ? (
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            whileHover={{ opacity: 1, x: 0 }}
-            className="mt-4 sm:mt-6 flex items-center text-sm sm:text-base font-semibold text-foreground"
-          >
+          <div className="mt-2.5 sm:mt-3 flex items-center text-xs sm:text-sm font-semibold text-foreground sm:opacity-70 sm:group-hover:opacity-100 sm:group-hover:translate-x-1 transition-all duration-300">
             <span>View Series</span>
-            <motion.span
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="ml-2"
-            >
-              →
-            </motion.span>
-          </motion.div>
+            <ArrowRight className="ml-1.5 w-4 h-4" />
+          </div>
         ) : (
-          <div className="mt-4 sm:mt-6 flex items-center text-sm sm:text-base font-semibold text-muted-foreground">
-            <span>Building Content</span>
-            <span className="ml-2">⏳</span>
+          <div className="mt-2.5 sm:mt-3 flex items-center gap-1.5 text-xs sm:text-sm font-medium text-muted-foreground">
+            <Clock className="w-3.5 h-3.5" />
+            <span>Building content</span>
           </div>
         )}
       </div>
