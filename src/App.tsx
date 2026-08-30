@@ -18,6 +18,7 @@ import PowerPlatformFundamentalsArticle from "./pages/PowerPlatformFundamentalsA
 import NLPAppliedSkillsArticle from "./pages/NLPAppliedSkillsArticle";
 import PowerAppsAppliedSkillsArticle from "./pages/PowerAppsAppliedSkillsArticle";
 import ThamizhumNaanumPodcast from "./pages/ThamizhumNaanumPodcast";
+import SpeakingEngagements from "./pages/SpeakingEngagements";
 import NotFound from "./pages/NotFound";
 import SystemsVsGoalsArticle from "./pages/SystemsVsGoalsArticle";
 import LivingLifeFullestArticle from "./pages/LivingLifeFullestArticle";
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/nlp-applied-skills" element={<NLPAppliedSkillsArticle />} />
           <Route path="/powerapps-applied-skills" element={<PowerAppsAppliedSkillsArticle />} />
           <Route path="/thamizhum-naanum-podcast" element={<ThamizhumNaanumPodcast />} />
+          <Route path="/speaking-engagements" element={<SpeakingEngagements />} />
           <Route path="/systems-vs-goals" element={<SystemsVsGoalsArticle />} />
           <Route path="/living-life-fullest" element={<LivingLifeFullestArticle />} />
           <Route path="/look-within" element={<LookWithinArticle />} />
