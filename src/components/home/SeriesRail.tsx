@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import SeriesCard from "./SeriesCard";
-import { Briefcase, Heart, Palette, GraduationCap, ChevronLeft, ChevronRight, Award, Shield, CheckCircle, Code, Terminal, Cpu, Zap, Mic, Headphones, Radio, Volume2 } from "lucide-react";
+import { Briefcase, Heart, Palette, GraduationCap, ChevronLeft, ChevronRight, Award, Shield, CheckCircle, Code, Terminal, Cpu, Zap, Mic, Headphones, Radio, Volume2, MessageSquare, Users, Globe } from "lucide-react";
 import { useRef } from "react";
 
 // Custom Certification Background Component
@@ -298,6 +298,97 @@ const PodcastBackground = () => (
   </div>
 );
 
+// Custom Speaking Background Component
+const SpeakingBackground = () => (
+  <div className="absolute inset-0 overflow-hidden">
+    {/* Floating speaking icons */}
+    <motion.div
+      animate={{ 
+        y: [0, -12, 0],
+        rotate: [0, 8, 0]
+      }}
+      transition={{ 
+        duration: 7,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      className="absolute top-5 right-7 text-green-400/45"
+    >
+      <Mic className="w-8 h-8" />
+    </motion.div>
+    
+    <motion.div
+      animate={{ 
+        y: [0, 16, 0],
+        rotate: [0, -6, 0]
+      }}
+      transition={{ 
+        duration: 9,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 1.5
+      }}
+      className="absolute top-14 left-5 text-green-300/40"
+    >
+      <Users className="w-6 h-6" />
+    </motion.div>
+    
+    <motion.div
+      animate={{ 
+        y: [0, -10, 0],
+        x: [0, 6, 0]
+      }}
+      transition={{ 
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 2
+      }}
+      className="absolute bottom-12 right-10 text-green-500/45"
+    >
+      <MessageSquare className="w-7 h-7" />
+    </motion.div>
+    
+    <motion.div
+      animate={{ 
+        y: [0, 14, 0],
+        rotate: [0, -10, 0]
+      }}
+      transition={{ 
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.8
+      }}
+      className="absolute bottom-18 left-6 text-green-400/35"
+    >
+      <Globe className="w-5 h-5" />
+    </motion.div>
+
+    {/* Decorative lines */}
+    <motion.div
+      animate={{ scaleX: [0, 1, 0] }}
+      transition={{ 
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      className="absolute top-1/3 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-400/25 to-transparent"
+    />
+    
+    <motion.div
+      animate={{ scaleY: [0, 1, 0] }}
+      transition={{ 
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 2
+      }}
+      className="absolute top-0 bottom-0 left-2/3 w-px bg-gradient-to-b from-transparent via-green-300/20 to-transparent"
+    />
+  </div>
+);
+
 interface Series {
   id: string;
   title: string;
@@ -408,7 +499,9 @@ const categoriesData: Category[] = [
         id: "speaking",
         title: "Speaking & Presentations",
         description: "Keynote talks and conference presentations",
-        episodeCount: 12,
+        episodeCount: 3,
+        customBackground: <SpeakingBackground />,
+        link: "/speaking-engagements",
       },
       {
         id: "leadership",
